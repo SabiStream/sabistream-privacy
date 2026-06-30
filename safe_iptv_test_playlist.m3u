@@ -1,0 +1,23 @@
+#EXTM3U
+# This playlist is for app/player testing only.
+# It intentionally uses developer sample streams and Creative Commons open-movie demo streams.
+# Do not add paid TV, cable/satellite rebroadcasts, PPV, sports, movies, or channels you do not have rights to distribute.
+# Attribution: Sintel, Big Buck Bunny, and Tears of Steel are Blender Foundation open movies licensed under Creative Commons Attribution licenses.
+
+#EXTINF:-1 tvg-id="apple.bipbop.16x9" tvg-name="Apple HLS Demo - BipBop 16:9" group-title="Legal Test Streams",Apple HLS Demo - BipBop 16:9
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8
+
+#EXTINF:-1 tvg-id="apple.bipbop.4x3" tvg-name="Apple HLS Demo - BipBop 4:3" group-title="Legal Test Streams",Apple HLS Demo - BipBop 4:3
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8
+
+#EXTINF:-1 tvg-id="apple.hls.fmp4" tvg-name="Apple HLS Demo - Advanced fMP4" group-title="Legal Test Streams",Apple HLS Demo - Advanced fMP4
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+
+#EXTINF:-1 tvg-id="blender.tears-of-steel.demo" tvg-name="Tears of Steel - CC BY 3.0 Demo" group-title="Open Movie Demos",Tears of Steel - CC BY 3.0 Demo
+https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
+
+#EXTINF:-1 tvg-id="blender.tears-of-steel.mux" tvg-name="Tears of Steel - CC BY 3.0 Demo 2" group-title="Open Movie Demos",Tears of Steel - CC BY 3.0 Demo 2
+https://test-streams.mux.dev/tos_ismc/main.m3u8
+
+#EXTINF:-1 tvg-id="blender.sintel.demo" tvg-name="Sintel - CC BY 3.0 Demo" group-title="Open Movie Demos",Sintel - CC BY 3.0 Demo
+https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8
