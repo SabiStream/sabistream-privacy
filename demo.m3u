@@ -1,0 +1,94 @@
+#EXTM3U
+# ============================================================================
+#  SabiStream — combined demo playlist  (Live TV + Movies + Series)   v3
+# ----------------------------------------------------------------------------
+#  Built for Google Play review / closed testing. Copyright-safe: Creative
+#  Commons open movies (Blender Foundation — Big Buck Bunny & Sintel, CC BY 3.0,
+#  www.blender.org) plus public developer test streams (Apple, Mux, Amazon
+#  CloudFront). No paid TV, no broadcast/cable rebroadcast, no PPV, no sports.
+#
+#  WHAT CHANGED IN v3: the Movies and Series entries now play SOUND. v2 pointed
+#  them at test-videos.co.uk, whose clips are encoded video-only (silent) — the
+#  picture played but there was no audio track. All on-demand entries now use
+#  the W3C HTML5 sample videos (media.w3.org), which carry a normal AAC audio
+#  track, so movies and episodes play with sound. (v2 had already moved off
+#  Google's old gtv-videos-bucket, which now returns AccessDenied on many
+#  networks.) The Live section is unchanged.
+#
+#  HOW THE THREE TABS GET POPULATED  (SabiStream classifies a plain M3U by the
+#  URL + name, NOT by the group name):
+#    * Live TV - live HLS streams (.m3u8). group-title -> the Live category.
+#    * Movies  - direct video files (.mp4) with no episode tag.
+#                group-title -> the Movie category.
+#    * Series  - .mp4 files whose NAME carries an episode tag like S01E01.
+#                Episodes group by the show title (text BEFORE the SxxEyy token);
+#                the season comes from the Sxx number.
+# ============================================================================
+
+
+# ------------------------------- LIVE TV ------------------------------------
+# Category: "Demo Live"                         (unchanged - confirmed working)
+#EXTINF:-1 tvg-id="demo.live.apple1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" group-title="Demo Live",Apple Test Channel HD
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8
+
+#EXTINF:-1 tvg-id="demo.live.apple43" group-title="Demo Live",Apple Channel 4:3
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8
+
+#EXTINF:-1 tvg-id="demo.live.appleadv" group-title="Demo Live",Apple Advanced (fMP4)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+
+#EXTINF:-1 tvg-id="demo.live.mux" group-title="Demo Live",Mux Test Channel
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+
+# Category: "Demo Cams & 4K"
+#EXTINF:-1 tvg-id="demo.live.coit" group-title="Demo Cams & 4K",City Cam (Live TS)
+https://d2zihajmogu5jn.cloudfront.net/CoitTower/master_ts_segtimes.m3u8
+
+#EXTINF:-1 tvg-id="demo.live.4k" group-title="Demo Cams & 4K",Nature 4K
+https://d2zihajmogu5jn.cloudfront.net/4k-hls/out.m3u8
+
+
+# ------------------------------- MOVIES -------------------------------------
+# Category: "Movies • Blender Open Films"   (CC BY 3.0 - attributed above; with audio)
+#EXTINF:-1 tvg-id="demo.movie.bbb" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c5/Big_buck_bunny_poster_big.jpg" group-title="Movies • Blender Open Films",Big Buck Bunny
+https://media.w3.org/2010/05/bunny/movie.mp4
+
+#EXTINF:-1 tvg-id="demo.movie.sintel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/70/Sintel_poster.jpg" group-title="Movies • Blender Open Films",Sintel (Trailer)
+https://media.w3.org/2010/05/sintel/trailer.mp4
+
+# Category: "Movies • Test Clips"
+#EXTINF:-1 tvg-id="demo.movie.bbb.trailer" group-title="Movies • Test Clips",Big Buck Bunny (Trailer)
+https://media.w3.org/2010/05/bunny/trailer.mp4
+
+#EXTINF:-1 tvg-id="demo.movie.reel" group-title="Movies • Test Clips",Sample Reel
+https://media.w3.org/2010/05/video/movie_300.mp4
+
+
+# ------------------------------- SERIES -------------------------------------
+# Category: "Series • Bunny Tales"
+# Show "Bunny Tales" - TWO seasons, to exercise season grouping.
+#EXTINF:-1 tvg-id="demo.series.bt.s01e01" group-title="Series • Bunny Tales",Bunny Tales S01E01 - The Meadow
+https://media.w3.org/2010/05/bunny/trailer.mp4
+
+#EXTINF:-1 tvg-id="demo.series.bt.s01e02" group-title="Series • Bunny Tales",Bunny Tales S01E02 - The Trap
+https://media.w3.org/2010/05/bunny/movie.mp4
+
+#EXTINF:-1 tvg-id="demo.series.bt.s01e03" group-title="Series • Bunny Tales",Bunny Tales S01E03 - Payback
+https://media.w3.org/2010/05/video/movie_300.mp4
+
+#EXTINF:-1 tvg-id="demo.series.bt.s02e01" group-title="Series • Bunny Tales",Bunny Tales S02E01 - Return
+https://media.w3.org/2010/05/bunny/trailer.mp4
+
+#EXTINF:-1 tvg-id="demo.series.bt.s02e02" group-title="Series • Bunny Tales",Bunny Tales S02E02 - The Feast
+https://media.w3.org/2010/05/bunny/movie.mp4
+
+# Category: "Series • Sintel Shorts"
+# Show "Sintel Shorts" - one season, three episodes.
+#EXTINF:-1 tvg-id="demo.series.ss.s01e01" group-title="Series • Sintel Shorts",Sintel Shorts S01E01 - Awakening
+https://media.w3.org/2010/05/sintel/trailer.mp4
+
+#EXTINF:-1 tvg-id="demo.series.ss.s01e02" group-title="Series • Sintel Shorts",Sintel Shorts S01E02 - The Search
+https://media.w3.org/2010/05/video/movie_300.mp4
+
+#EXTINF:-1 tvg-id="demo.series.ss.s01e03" group-title="Series • Sintel Shorts",Sintel Shorts S01E03 - The Dragon
+https://media.w3.org/2010/05/sintel/trailer.mp4
